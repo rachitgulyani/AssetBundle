@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_demodltpipeline:
+      name: demodltpipeline
+      libraries:
+        - glob:
+            include: ./../../src/pipelines/demodltpipeline/transformations/**
+      schema: bronze
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog}
+      serverless: true
+      root_path: ./../../src/pipelines/demodltpipeline
